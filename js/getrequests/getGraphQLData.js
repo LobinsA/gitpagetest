@@ -1,8 +1,8 @@
 const storedAccessToken = localStorage.getItem('accessToken');
+const outputElement = document.getElementById('output');
 
 if(storedAccessToken) {
-    const outputElement = document.getElementById('output');
-    outputElement.textContent = storedAccessToken;
+     outputElement.textContent = storedAccessToken;
 } else {
-    console.log('Access Token not found');
+    outputElement.textContent = "Nope.";
 }
