@@ -35,7 +35,7 @@ try {
         fetch(publicUrl, requestOptions)
         .then(response => response.json())
         .then(data => {
-            dataElement.textContent = data;
+            //dataElement.textContent = data;
         })
         .catch(error => {
             console.error('Error:', error);
