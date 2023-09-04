@@ -3,10 +3,10 @@ try {
     const outputElement = document.getElementById('output');
 
 if(storedAccessToken) {
-    outputElement.textContent = storedAccessToken;
+    outputElement.textContent = "Success!";
 } else {
-    outputElement.textContent = "Nope.";
+    outputElement.textContent = "Fail!";
 }
 } catch (error) {
-    outputElement.textContent = "Nope.";
+    outputElement.textContent = "Fail!";
 }

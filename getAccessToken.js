@@ -1,5 +1,5 @@
 async function main() {
-  const clientId = '9a0aa469-2c63-4491-b767-3354eba1bd7';
+  const clientId = '9a0aa469-2c63-4491-b767-3354eba1bd79';
   const clientSecret = 'EPWbyJyeV6pDzBGB3wKIJx2coL18qrDGiLhUcn6o';
   const tokenUrl = 'https://www.warcraftlogs.com/oauth/token';
   
