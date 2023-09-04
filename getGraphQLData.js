@@ -3,6 +3,7 @@ const publicUrl = 'https://www.warcraftlogs.com/oauth/token';
 try {
     const storedAccessToken = sessionStorage.getItem('accessToken');
     const outputElement = document.getElementById('output');
+    const dataElement = document.getElementById('sci');
 
 if(storedAccessToken) {
     outputElement.textContent = "Success!";
@@ -15,21 +16,14 @@ if(storedAccessToken) {
 
 //todo: create queries for graphql and return certain data
 const graphqlQuery = `
-  query {
-    player(name: "YourPlayerName") {
-      combat(characterID: "YourCharacterID") {
-        damageTaken {
-          total
-          details {
-            ability {
-              name
-            }
-            total
-          }
-        }
-      }
-    }
-  }
+query{
+	characterData{
+		character(name:"Sci",serverSlug:"Area-52",serverRegion:"US"){
+			level
+			classID
+			name
+		}
+}
 `;
 
 const headers = {
@@ -48,7 +42,7 @@ const requestOptions = {
 fetch(publicUrl, requestOptions)
   .then(response => response.json())
   .then(data => {
-    console.log(data);
+    dataElement.textContent(data);
   })
   .catch(error => {
     console.error('Error:', error);
