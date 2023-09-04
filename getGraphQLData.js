@@ -26,7 +26,7 @@ try {
 
         // Create the request options
         const requestOptions = {
-        method: 'POST',
+        method: 'GET',
         headers: headers,
         body: JSON.stringify({ query: graphqlQuery }),
         };
