@@ -11,6 +11,24 @@
         <button id="myButton">Click This</button>
         <div id="output"></div>
         <script src="insomnia.js"></script>
-        
+
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    
+        <script>
+            document.getElementById("myForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent the form from submitting
+    
+                // Get input values
+                const name = document.getElementById("name").value;
+    
+                // Do something with the input data (e.g., log it)
+                console.log("Name:", name);
+            });
+        </script>
     </body>
 </html>

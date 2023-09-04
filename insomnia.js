@@ -53,4 +53,9 @@ fetchWarcraftLogsData().then((data) => {
   console.log("Async function finished");
 });
 
+function printData(data) {
+  var outputDiv = document.getElementById("output");
+  outputDiv.textContent = data;
+}
+
 console.log("Async function called, but not finished yet");
