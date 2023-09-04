@@ -4,7 +4,6 @@ try {
     const storedAccessToken = sessionStorage.getItem('accessToken');
     const outputElement = document.getElementById('output');
     const dataElement = document.getElementById('sci');
-    dataElement.textContent("hello");
 
     if(storedAccessToken) {
         outputElement.textContent = "Success!";
@@ -36,7 +35,7 @@ try {
         fetch(publicUrl, requestOptions)
         .then(response => response.json())
         .then(data => {
-            dataElement.textContent(data);
+            dataElement.textContent = data;
         })
         .catch(error => {
             console.error('Error:', error);
