@@ -29,7 +29,7 @@ const fetchWarcraftLogsData = async () => {
     //console.log(data.data.characterData);
     var button = document.getElementById("myButton");
     var outputDiv = document.getElementById("output");
-    button.addEventListener("click", outputDiv.innerHTML = data.data.characterData);
+    button.addEventListener("click", outputDiv.innerHTML = "test text");
     return data.data.characterData;
   } catch (error) {
     console.error(error);
