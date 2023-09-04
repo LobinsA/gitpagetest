@@ -3,7 +3,7 @@ const publicUrl = 'https://www.warcraftlogs.com/oauth/token';
 try {
     const storedAccessToken = sessionStorage.getItem('accessToken');
     const outputElement = document.getElementById('output');
-    const dataElement = document.getElementById('sci');
+    const dataElement = document.getElementById('sci').textContent = "hi";
 
     if(storedAccessToken) {
         outputElement.textContent = "Success!";
@@ -36,6 +36,7 @@ try {
         .then(response => response.json())
         .then(data => {
             //dataElement.textContent = data;
+            console.log(data);
         })
         .catch(error => {
             console.error('Error:', error);
