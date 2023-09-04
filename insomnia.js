@@ -27,7 +27,7 @@ const fetchWarcraftLogsData = async () => {
 
     const data = await response.json();
     //console.log(data.data.characterData);
-    return data.data.characterData;
+    return data.data.characterData.character;
   } catch (error) {
     console.error(error);
   }
@@ -38,14 +38,14 @@ function delay(ms) {
 }
 
 fetchWarcraftLogsData().then((data) => {
-  console.log(data);
+  console.log(data.name);
   // Get a reference to the button element and the output div
   var button = document.getElementById("myButton");
   var outputDiv = document.getElementById("output");
 
   // Define a function to run when the button is clicked
   function showMessage() {
-      outputDiv.innerHTML = data;
+      outputDiv.innerHTML = data.name + " " + data.level + " " + data.classID;
   }
 
   // Attach the function to the button's click event
