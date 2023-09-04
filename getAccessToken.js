@@ -18,7 +18,7 @@ async function main() {
   };
 
   const accessToken = await getAccessToken(tokenUrl,requestOptions);
-  //localStorage.setItem('accessToken', accessToken);
+  sessionStorage.setItem('accessToken', accessToken);
   //console.log(accessToken);
   const outputElement = document.getElementById('output');
   outputElement.textContent = accessToken;
