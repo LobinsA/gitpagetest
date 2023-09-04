@@ -33,4 +33,24 @@ const fetchWarcraftLogsData = async () => {
   }
 };
 
-fetchWarcraftLogsData();
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+fetchWarcraftLogsData().then((data) => {
+  console.log(data);
+  // Get a reference to the button element and the output div
+  var button = document.getElementById("myButton");
+  var outputDiv = document.getElementById("output");
+
+  // Define a function to run when the button is clicked
+  function showMessage() {
+      outputDiv.innerHTML = data;
+  }
+
+  // Attach the function to the button's click event
+  button.addEventListener("click", showMessage);
+  console.log("Async function finished");
+});
+
+console.log("Async function called, but not finished yet");
