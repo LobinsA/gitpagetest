@@ -26,11 +26,11 @@ const fetchWarcraftLogsData = async () => {
     }
 
     const data = await response.json();
-    console.log(data.data.characterData);
-    return data.data.characterData;
+    //console.log(data.data.characterData);
     var button = document.getElementById("myButton");
     var outputDiv = document.getElementById("output");
-    button.addEventListener("click", outputDiv.innerHTML = "Button Clicked.");
+    button.addEventListener("click", outputDiv.innerHTML = data.data.characterData);
+    return data.data.characterData;
   } catch (error) {
     console.error(error);
   }
