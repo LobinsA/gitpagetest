@@ -21,7 +21,7 @@ async function main() {
   localStorage.setItem('accessToken', accessToken);
 
   const outputElement = document.getElementById('output');
-  outputElement.textContent = "Hello World!";
+  outputElement.textContent = accessToken;
 }
 
 async function getAccessToken(tokenUrl, requestOptions) {
