@@ -41,7 +41,7 @@ fetchWarcraftLogsData().then((data) => {
   console.log(data.name);
   // Get a reference to the button element and the output div
   var button = document.getElementById("myButton");
-  var outputDiv = document.getElementById("output");
+  var outputDiv = document.getElementById("output1");
 
   // Define a function to run when the button is clicked
   function showMessage() {
@@ -54,7 +54,7 @@ fetchWarcraftLogsData().then((data) => {
 });
 
 function printData(data) {
-  var outputDiv = document.getElementById("output");
+  var outputDiv = document.getElementById("output2");
   outputDiv.textContent = data;
 }
 
