@@ -8,27 +8,29 @@
             <h1 id="hello-text">Mit Planner</h1>
             <img id="image" src="img\beach.jpg" width="400" height="500" alt="Hello World Image">
         </div>
+
+
         <button id="myButton">Click This</button>
         <div id="output1"></div>
-        <div id="output2"></div>
         <script src="insomnia.js"></script>
 
+        <div id="output2"></div>
         <form id="myForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
+            <label for="code">Name:</label>
+            <input type="text" id="code" name="code">
             <br>
             <input type="submit" value="Submit">
         </form>
     
         <script>
             document.getElementById("myForm").addEventListener("submit", function(event) {
-                event.preventDefault(); // Prevent the form from submitting
+                event.preventDefault();
     
                 // Get input values
-                const name = document.getElementById("name").value;
+                const code = document.getElementById("code").value;
     
                 // Do something with the input data (e.g., log it)
-                printData(name);
+                getGraphQLData(code);
             });
         </script>
     </body>
