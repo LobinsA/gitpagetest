@@ -91,7 +91,7 @@ button.addEventListener("click", showMessage);
 
 function showMessage() {
   fetchWarcraftLogsData().then((data) => {
-    const result = data.characterData.character.name
+    const result = data.characterData.character;
     console.log(result);
     // Get a reference to the button element and the output div
     console.log("Async function finished");
