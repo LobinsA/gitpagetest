@@ -36,26 +36,24 @@ const fetchWarcraftLogsData = async () => {
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-fetchWarcraftLogsData().then((data) => {
-  console.log(data.name);
-  // Get a reference to the button element and the output div
-  var button = document.getElementById("myButton");
-  var outputDiv = document.getElementById("output1");
-
-  // Define a function to run when the button is clicked
-  function showMessage() {
-      outputDiv.innerHTML = data.name + " " + data.level + " " + data.classID;
-  }
-
-  // Attach the function to the button's click event
-  button.addEventListener("click", showMessage);
-  console.log("Async function finished");
-});
-
-function printData(data) {
-  var outputDiv = document.getElementById("output2");
-  outputDiv.textContent = data;
+function showMessage() {
+  fetchWarcraftLogsData().then((data) => {
+    console.log(data.name);
+    // Get a reference to the button element and the output div
+    console.log("Async function finished");
+  });
+  outputDiv.innerHTML = data.name + " " + data.level + " " + data.classID;
 }
 
+
+function printData(data) {
+  var outputDiv = document.getElementById("output1");
+  outputDiv.textContent = data;
+
+}
+var button = document.getElementById("myButton");
+var outputDiv = document.getElementById("output2");
+
+// Attach the function to the button's click event
+button.addEventListener("click", showMessage);
 console.log("Async function called, but not finished yet");
