@@ -27,7 +27,7 @@ const fetchWarcraftLogsData = async () => {
 
     const data = await response.json();
     //console.log(data.data.characterData);
-    return data.data.characterData.character;
+    return data.data;
   } catch (error) {
     console.error(error);
   }
@@ -44,12 +44,8 @@ const fetchWarcraftLogsDataWithCode = async (code) => {
     body: JSON.stringify({
       query: `query {
         reportData {
-          report(code: ${code}) {
+          report(code: "${code}") {
             code
-            fights(fightIDs: [5]) {
-              difficulty
-              averageItemLevel
-            }
             masterData {
               gameVersion
               logVersion
@@ -65,7 +61,8 @@ const fetchWarcraftLogsDataWithCode = async (code) => {
             }
           }
         }
-      }`,
+      }
+      `,
     }),
   };
 
@@ -74,9 +71,8 @@ const fetchWarcraftLogsDataWithCode = async (code) => {
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-
     const data = await response.json();
-    //console.log(data.data.characterData);
+    //console.log(data.data.reportData);
     return data.data;
   } catch (error) {
     console.error(error);
@@ -107,9 +103,12 @@ function showMessage() {
 function getGraphQLData(code) {
   var outputDiv2 = document.getElementById("output2");
   fetchWarcraftLogsDataWithCode(code).then((data) => {
-    const result = data.reportData.report.fights.averageItemLevel;
+    const result = data.reportData;
     outputDiv2.textContent = result;
+    console.log(result);
   });
 }
 
+//showMessage();
+//getGraphQLData("anwc8HgYMQmy24Rp");
 console.log("Async function called, but not finished yet");
